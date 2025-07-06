@@ -1,0 +1,25 @@
+package com.library;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/**
+ * Main application class for Library Management System
+ */
+public class LibraryManagementApplication {
+    
+    public static void main(String[] args) {
+        System.out.println("Starting Library Management Application...");
+        
+        // Load Spring Application Context
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        
+        System.out.println("Spring Context loaded successfully!");
+        System.out.println("Library Management Application is ready to use.");
+        
+        // Close context if it's ClassPathXmlApplicationContext
+        if (context instanceof ClassPathXmlApplicationContext) {
+            ((ClassPathXmlApplicationContext) context).close();
+        }
+    }
+}
